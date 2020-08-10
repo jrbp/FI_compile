@@ -23,7 +23,7 @@ Download and extract source:
 #+BEGIN_SRC sh
 wget https://www.abinit.org/sites/default/files/packages/abinit-8.10.3.tar.gz
 tar -xvf abinit-8.10.3.tar.gz
-cd abinit-8.10.3.tar.gz
+cd abinit-8.10.3
 #+END_SRC
 
 Load relevant modules (change =my_mods= if needed):

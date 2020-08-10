@@ -1,0 +1,52 @@
+#+TITLE: Netcdf 4.7.4 intelmpi2017-4
+Guide for compiling parallel netcdf for use with rusty or popeye systems.
+In this guide both C and Fortran bindings will be installed.
+
+* Dependencies
+** preinstalled
+We will use the preinstalled modules:
+    - intel/compiler/2017-4
+    - intel/mpi/2017-4
+    - intel/mkl/2017-4
+    - lib/hdf5/1.12.0-intelmpi
+
+* Setup
+cd to where ever you intend to build (/home/$USER/builds/netcdf would be good on the flatiron desktop for faster read/write)
+
+Download and extract source:
+#+BEGIN_SRC sh
+# download and extract netcdf-c
+wget https://github.com/Unidata/netcdf-c/archive/v4.7.4.tar.gz
+tar -xvf v4.7.4.tar.gz
+# download and extract netcdf-fortran
+wget https://github.com/Unidata/netcdf-fortran/archive/v4.5.3.tar.gz
+tar -xvf v4.5.3.tar.gz
+#+END_SRC
+
+Load relevant modules:
+#+BEGIN_SRC sh
+module purge
+module load intel/compiler/2017-4 intel/mpi/2017-4 intel/mkl/2017-4 lib/hdf5/1.12.0-intelmpi
+#+END_SRC
+* Compile
+** netcdf-c (must be done first)
+
+note the prefix line, use the appropriate prefix for either popeye and rusty
+
+#+BEGIN_SRC sh
+cd netcdf-c-4.7.4
+
+./configure CC=mpiicc CPPFLAGS="-I${HDF5_BASE}/include" LDFLAGS="-L${HDF5_BASE}/lib" LIBS="-lhdf5_fortran -lhdf5hl_fortran -lhdf5_hl -lhdf5"  --enable-parallel-tests --with-mpiexec=${I_MPI_ROOT}/intel64/bin/mpirun --prefix=${HOME}/sw/netcdf/4.7.4-intelmpi2017-4
+
+make -j8 # change number to number of processes you wish to compile with
+make check # to ensure nothing went wrong
+make install
+cd ../
+#+END_SRC
+** netcdf-fortran
+It is recommended to complete the steps in [[Setup module files]] before proceeding (other wise you will need to set some of the env vars used here manually).
+* Configure
+** Setup module files
+If you have not done so already create the directory ~/sw/modules/my_mods where
+configurations of modules you yourself define are stored (you can of course
+change my_mods to your initials or something).

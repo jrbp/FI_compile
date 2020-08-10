@@ -44,7 +44,7 @@ extracted the abinit source code, then within that file:
   wish to add ~ulimit -s unlimited~ to your job scripts (though jobs will run
   faster if those lines are left commented and the ulimit command is used).
 
-#+BEGIN_SRC
+#+BEGIN_SRC sh
 ./configure --with-config-file=FI_intel2017.ac
 make -j8
 make check

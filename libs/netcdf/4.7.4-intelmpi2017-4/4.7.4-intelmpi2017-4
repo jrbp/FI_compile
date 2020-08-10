@@ -5,8 +5,11 @@
 
 set pkg netcdf
 set version 4.7.4-intelmpi2017-4
-# set root /mnt/home/__user__/sw/netcdf/4.7.4-intelmpi2017-4  # for rusty
-# set root /home/__user__/sw/netcdf/4.7.4-intelmpi2017-4  # for popeye
+# for rusty uncomment following line
+# set root /mnt/home/__user__/sw/netcdf/4.7.4-intelmpi2017-4
+
+# for popeye uncomment following line
+# set root /home/__user__/sw/netcdf/4.7.4-intelmpi2017-4
 
 proc ModulesHelp { } {
     puts stderr "Sets the environment for $pkg-$version"

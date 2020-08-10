@@ -50,6 +50,7 @@ manually).
 
 Now that you have the module file setup we load it
 #+BEGIN_SRC sh
+module use --append ${HOME}/sw/modules # so that modules in sw/modules are available
 module load my_mods/netcdf/4.7.4-intelmpi2017-4
 #+END_SRC
 

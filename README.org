@@ -1,6 +1,8 @@
 #+TITLE: FI_compile
 
-Guides for compiling common codes used on rusty and/or popeye
+Guides for compiling certain software and dependencies for use on rusty and/or popeye.
+
+/Well, that just sounds like a package manager with extra steps./
 
 * DFT codes
 - [[file:DFT/abinit/README.org][ABINIT]]

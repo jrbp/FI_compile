@@ -2,6 +2,10 @@
 
 Guides for compiling certain software and dependencies for use on rusty and/or popeye.
 
+Pull requests for other codes are appreciated. While I've made the abinit
+documentation somewhat nice, if all you want to add is a text file with some
+copy pasted commands that is better than no documentation at all.
+
 /Well, that just sounds like a package manager with extra steps./
 
 * DFT codes

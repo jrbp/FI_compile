@@ -2,4 +2,4 @@
 
 https://www.abinit.org/
 * Versions
-- [[./8.10.3-intelmpi2017-4/README.org][8.10.3 with intel mpi]]
+- [[file:./8.10.3-intelmpi2017-4/README.org][8.10.3 with intel mpi]]

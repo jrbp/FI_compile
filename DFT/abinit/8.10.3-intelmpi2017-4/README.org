@@ -17,7 +17,7 @@ parallel netcdf has been installed and a personal module configured as detailed
 in the link above.
 * Setup
 
-cd to where ever you intend to build (/home/$USER/builds/netcdf would be good on the flatiron desktop for faster read/write)
+cd to where ever you intend to build (/home/$USER/builds/abinit would be good on the flatiron desktop for faster read/write)
 
 Download and extract source:
 #+BEGIN_SRC sh
@@ -33,8 +33,8 @@ module load intel/compiler/2017-4 intel/mpi/2017-4 intel/mkl/2017-4 lib/hdf5/1.1
 #+END_SRC
 * Compile
 
+Copy [the configure.ac file in this directory] to the directory where you have
+extracted the abinit source code.
 
-
-Copy [the configure.ac file in this directory] to
 
 * Configure

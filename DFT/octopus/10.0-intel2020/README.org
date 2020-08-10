@@ -10,22 +10,22 @@
 from
 ~$grep WARNING config.log~
 #+begin_example
-configure:11728: WARNING: Could not find libvdwxc library.
-configure:13289: WARNING: Could not find PFFT library.
-configure:13516: WARNING: Could not find PNFFT library.
-configure:13964: WARNING: Could not find etsf_io library.
-configure:14031: WARNING: Could not find BerkeleyGW library.
-configure:14125: WARNING: Could not find SPARSKIT library.
-configure:14189: WARNING: Could not find NLOPT library.
-configure:14709: WARNING: Could not find the elpa library
-configure:14799: WARNING: Could not find Libfm library.
-configure:14898: WARNING: Could not find LibYAML library.
-configure:15000: WARNING: Could not find Futile library.
-configure:15097: WARNING: Could not find PSolver library.
-configure:15233: WARNING: Could not find ISF library.
-configure:15402: WARNING: Could not find the poke library
-configure:15688: WARNING: Octopus will be compiled without PARMETIS support
-configure:15770: WARNING: Could not find the likwid library
+libvdwxc
+PFFT
+PNFFT
+etsf_io
+BerkeleyGW
+SPARSKIT
+NLOPT
+elpa
+Libfm
+LibYAML
+Futile
+PSolver
+ISF
+the poke
+PARMETIS support
+likwid
 #+end_example
 
 

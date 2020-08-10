@@ -51,7 +51,7 @@ make check
 make install
 #+END_SRC
 * Configure
-
+** Setup module files
 If you have not done so already create the directory ~/sw/modules/my_mods where
 configurations of modules you yourself define are stored (you can of course
 change my_mods to your initials or something else).

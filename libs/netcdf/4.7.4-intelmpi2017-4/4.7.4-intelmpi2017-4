@@ -1,0 +1,28 @@
+#%Module1.0#####################################################################
+#
+# Module: netcdf-4.7.4-intelmpi2017-4
+#
+
+set pkg netcdf
+set version 4.7.4-intelmpi2017-4
+# set root /mnt/home/__user__/sw/netcdf/4.7.4-intelmpi2017-4  # for rusty
+# set root /home/__user__/sw/netcdf/4.7.4-intelmpi2017-4  # for popeye
+
+proc ModulesHelp { } {
+    puts stderr "Sets the environment for $pkg-$version"
+}
+
+module-whatis   "Sets the environment for $pkg-$version"
+
+prepend-path    PATH                            $root/bin
+prepend-path    LD_LIBRARY_PATH                 $root/lib
+prepend-path    CPATH                           $root/include
+prepend-path    LIBRARY_PATH                    $root/lib
+
+setenv          NETCDF_BASE                       $root
+setenv          NETCDF_VERSION                    $version
+
+prereq          intel/compiler/2017-4
+prereq          intel/mpi/2017-4
+prereq          lib/hdf5/1.12.0-intelmpi
+conflict        my_mods/netcf

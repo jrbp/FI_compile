@@ -44,9 +44,23 @@ make install
 cd ../
 #+END_SRC
 ** netcdf-fortran
-It is recommended to complete the steps in [[*Setup module files][Setup module files]] before proceeding (other wise you will need to set some of the env vars used here manually).
+It is recommended to complete the steps in [[*Setup module files][Setup module files]] below before
+proceeding (other wise you will need to set some of the env vars used here
+manually).
+
+
+
+
 * Configure
 ** Setup module files
 If you have not done so already create the directory ~/sw/modules/my_mods where
 configurations of modules you yourself define are stored (you can of course
-change my_mods to your initials or something).
+change my_mods to your initials or something else).
+
+Copy [[file:4.7.4-intelmpi2017-4][the module file in this directory]] to =~/sw/modules/my_mods=.
+
+Replace all instances of =_user__= with your username
+
+Uncomment the "set root" appropriately depending on if you are on rusty or popeye
+
+Change "my_mods" in the last line if you have named that directory something else

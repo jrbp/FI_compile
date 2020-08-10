@@ -10,6 +10,6 @@ We will use the preinstalled modules:
     - intel/mkl/2017-4
     - lib/hdf5/1.12.0-intelmpi
 ** to be installed manually
-*** [[/home/jbonini/FI_compile/libs/netcdf/4.7.4-intelmpi2017-4/README.org][netcdf/4.7.4-intelmpi2017-4]]
+*** [[../../../libs/netcdf/4.7.4-intelmpi2017-4/README.org][netcdf/4.7.4-intelmpi2017-4]]
 If netcdf with MPI-IO is not needed this can be skipped and either the fallback or preinstalled modules can be used.
 However, this guide is written as if parallel netcdf has been installed and a personal module configured as detailed in the link above.

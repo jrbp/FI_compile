@@ -1,4 +1,5 @@
 #+TITLE: NetCDF
 https://www.unidata.ucar.edu/software/netcdf/
 * Versions
- - [[file:4.7.4-intelmpi2017-4/README.org][4.7.4 with parallel hdf5, intel mpi, and fortran bindings]]
+ - [[file:4.7.4-intelmpi2017-4/README.org][4.7.4 with intelmpi2017-3]]
+ - [[file:4.7.4-intelmpi2020/README.org][4.7.4 with intelmpi2020]]

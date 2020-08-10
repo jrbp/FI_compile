@@ -33,7 +33,7 @@ module load intel/compiler/2017-4 intel/mpi/2017-4 intel/mkl/2017-4 lib/hdf5/1.1
 #+END_SRC
 * Compile
 
-Copy [the configure.ac file in this directory] to the directory where you have
+Copy [[file:./FI_intel2017.ac][the configure.ac file in this directory]] to the directory where you have
 extracted the abinit source code.
 
 

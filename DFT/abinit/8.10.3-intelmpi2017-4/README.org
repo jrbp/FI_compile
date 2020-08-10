@@ -56,8 +56,7 @@ If you have not done so already create the directory ~/sw/modules/my_mods where
 configurations of modules you yourself define are stored (you can of course
 change my_mods to your initials or something else).
 
-Copy [file:][the module file in this directory]] to =~/sw/modules/my_mods=, then within that file:
-
+Copy [[file:8.10.3-intelmpi2017-4][the module file in this directory]] to =~/sw/modules/my_mods=, then within that file:
 - Replace all instances of =__user__= with your username
 - Uncomment the appropriate ~set root~ line depending on if you are on rusty or popeye
 - Change "my_mods" in the last line if you have named that directory something else

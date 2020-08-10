@@ -1,0 +1,11 @@
+#+TITLE: libxc 4.3.4 intelmpi2020
+
+#+BEGIN_SRC sh
+module purge
+module load intel/compiler intel/mpi intel/mkl
+#./configure CC=mpiicc CXX=mpiicpc FC=mpiifort --prefix='/mnt/home/jbonini/sw/libxc/5.0.0-intelmpi2020'
+./configure CC=mpiicc CXX=mpiicpc FC=mpiifort --prefix='/mnt/home/jbonini/sw/libxc/4.3.4-intelmpi2020'
+make -j8
+make check # takes forever
+make install
+#+END_SRC

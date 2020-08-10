@@ -1,0 +1,29 @@
+#%Module1.0#####################################################################
+#
+# Module: octopus-8.10.3-intelmpi
+#
+
+set pkg octopus
+set version 10.0-intelmpi2020
+set root /mnt/home/jbonini/sw/octopus/10-intelmpi2020
+
+proc ModulesHelp { } {
+    puts stderr "Sets the environment for $pkg-$version"
+}
+
+module-whatis   "Sets the environment for $pkg-$version"
+
+prepend-path    PATH                            $root/bin
+prepend-path    LD_LIBRARY_PATH                 $root/lib
+
+setenv          OCTOPUS_BASE                       $root
+setenv          OCTOPUS_VERSION                    $version
+
+prereq          intel/compiler/2020
+prereq          intel/mpi/2020
+prereq          intel/mkl/2020
+prereq          lib/fftw3/3.3.8-intelmpi
+prereq          lib/hdf5/1.12.0-intelmpi
+prereq          jb/libxc/4.3.4-intelmpi2020
+prereq          jb/netcdf/4.7.4-intelmpi2020
+conflict        jb/octopus

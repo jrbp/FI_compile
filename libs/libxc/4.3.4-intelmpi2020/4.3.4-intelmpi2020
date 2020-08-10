@@ -1,0 +1,27 @@
+#%Module1.0#####################################################################
+#
+# Module: libxc-4.3.4-intelmpi2020
+#
+
+set pkg libxc
+set version 4.3.4-intelmpi2020
+set root /mnt/home/jbonini/sw/libxc/4.3.4-intelmpi2020
+
+proc ModulesHelp { } {
+    puts stderr "Sets the environment for $pkg-$version"
+}
+
+module-whatis   "Sets the environment for $pkg-$version"
+
+prepend-path    PATH                            $root/bin
+prepend-path    LD_LIBRARY_PATH                 $root/lib
+prepend-path    CPATH                           $root/include
+prepend-path    LIBRARY_PATH                    $root/lib
+
+setenv          LIBXC_BASE                       $root
+setenv          LIBXC_VERSION                    $version
+
+prereq          intel/compiler/2020
+prereq          intel/mpi/2020
+prereq          intel/mkl/2020 # not sure if necessary
+conflict        jb/libxc

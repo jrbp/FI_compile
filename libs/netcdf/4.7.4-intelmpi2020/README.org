@@ -1,0 +1,25 @@
+#+TITLE: netcdf 4.7.4 intelmpi2020
+
+c part
+#+BEGIN_SRC sh
+module purge
+module load intel/compiler/2020 intel/mpi/2020 intel/mkl/2020 lib/fftw3/3.3.8-intelmpi lib/hdf5/1.12.0-intelmpi
+
+CC=mpiicc CPPFLAGS=-I${HDF5_BASE}/include LDFLAGS=-L${HDF5_BASE}/lib ./configure --enable-shared --enable-parallel-tests --prefix=/mnt/home/jbonini/sw/netcdf/4.7.4-intelmpi2020
+make -j8
+make check
+make install
+#+END_SRC
+
+fortran part
+#+BEGIN_SRC sh
+NCDIR=/mnt/home/jbonini/sw/netcdf/4.7.4-intelmpi2020
+export LD_LIBRARY_PATH=${NCDIR}/lib:${LD_LIBRARY_PATH}
+
+CC=mpiicc FC=mpiifort CPPFLAGS=-I${NCDIR}/include LDFLAGS=-L${NCDIR}/lib ./configure --enable-parallel-tests --prefix=/mnt/home/jbonini/sw/netcdf/4.7.4-intelmpi2020
+
+make -j8
+make check
+make install
+
+#+END_SRC

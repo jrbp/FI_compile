@@ -4,42 +4,8 @@
 * Dependencies
 ** preinstalled
 ** to be installed manually
-*** libxc
-#+BEGIN_SRC sh
-module purge
-module load intel/compiler intel/mpi intel/mkl
-#./configure CC=mpiicc CXX=mpiicpc FC=mpiifort --prefix='/mnt/home/jbonini/sw/libxc/5.0.0-intelmpi2020'
-./configure CC=mpiicc CXX=mpiicpc FC=mpiifort --prefix='/mnt/home/jbonini/sw/libxc/4.3.4-intelmpi2020'
-make -j8
-make check # takes forever
-make install
-#+END_SRC
-
-*** netcdf
-c part
-#+BEGIN_SRC sh
-module purge
-module load intel/compiler/2020 intel/mpi/2020 intel/mkl/2020 lib/fftw3/3.3.8-intelmpi lib/hdf5/1.12.0-intelmpi
-
-CC=mpiicc CPPFLAGS=-I${HDF5_BASE}/include LDFLAGS=-L${HDF5_BASE}/lib ./configure --enable-shared --enable-parallel-tests --prefix=/mnt/home/jbonini/sw/netcdf/4.7.4-intelmpi2020
-make -j8
-make check
-make install
-#+END_SRC
-
-fortran part
-#+BEGIN_SRC sh
-NCDIR=/mnt/home/jbonini/sw/netcdf/4.7.4-intelmpi2020
-export LD_LIBRARY_PATH=${NCDIR}/lib:${LD_LIBRARY_PATH}
-
-CC=mpiicc FC=mpiifort CPPFLAGS=-I${NCDIR}/include LDFLAGS=-L${NCDIR}/lib ./configure --enable-parallel-tests --prefix=/mnt/home/jbonini/sw/netcdf/4.7.4-intelmpi2020
-
-make -j8
-make check
-make install
-
-#+END_SRC
-
+*** [[file:../../../libs/libxc/4.3.4-intelmpi2020/README.org][libxc 4.3.4 intelmpi2020]]
+*** [[file:../../../libs/netcdf/4.7.4-intelmpi2020/README.org][netcdf 4.7.4 intelmpi2020]]
 *** optional dependencies not installed
 from
 ~$grep WARNING config.log~

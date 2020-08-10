@@ -10,5 +10,6 @@ copy pasted commands that is better than no documentation at all.
 
 * DFT codes
 - [[file:DFT/abinit/README.org][ABINIT]]
+- [[file:DFT/octopus/README.org][Octopus]]
 * Libraries
 - [[file:libs/netcdf/README.org][NetCDF]]

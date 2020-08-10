@@ -26,7 +26,7 @@ tar -xvf abinit-8.10.3.tar.gz
 cd abinit-8.10.3.tar.gz
 #+END_SRC
 
-Load relevant modules:
+Load relevant modules (change =my_mods= if needed):
 #+BEGIN_SRC sh
 module purge
 module load intel/compiler/2017-4 intel/mpi/2017-4 intel/mkl/2017-4 lib/hdf5/1.12.0-intelmpi my_mods/netcdf/4.7.4-intelmpi2017-4

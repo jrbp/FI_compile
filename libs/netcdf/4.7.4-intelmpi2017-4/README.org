@@ -42,7 +42,7 @@ cd ../
 #+END_SRC
 
 ** netcdf-fortran
-It is recommended to complete the steps in [[*Setup module files][Setup module files]] below before
+It is recommended to complete the steps in [[#Setup-module-files][Setup module files]] below before
 proceeding (other wise you will need to set some of the env vars used here
 manually).
 

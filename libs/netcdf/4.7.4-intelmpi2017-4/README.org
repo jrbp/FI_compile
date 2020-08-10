@@ -44,7 +44,7 @@ make install
 cd ../
 #+END_SRC
 ** netcdf-fortran
-It is recommended to complete the steps in [[module-setup][Setup module files]] before proceeding (other wise you will need to set some of the env vars used here manually).
+It is recommended to complete the steps in [[file:./README.org::module-setup][Setup module files]] before proceeding (other wise you will need to set some of the env vars used here manually).
 * Configure
 ** Setup module files <<module-setup>>
 If you have not done so already create the directory ~/sw/modules/my_mods where

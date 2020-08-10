@@ -1,0 +1,39 @@
+# -*- Autoconf -*-
+FC="mpiifort"
+CC="mpiicc"
+CXX="mpiicpc"
+
+# uncomment the next two lines if you are opposed to adding 'ulimit -s unlimited' to job scripts
+# FCFLAGS_EXTRA="-heap-arrays"
+# CFLAGS_EXTRA="-heap-arrays"
+
+enable_64bit_flags="yes"
+
+enable_mpi="yes"
+enable_openmp="yes"
+enable_mpi_inplace="yes"
+enable_mpi_io="yes"
+with_mpi_incs="-I${I_MPI_ROOT}/intel64/include"
+with_mpi_libs="-L${I_MPI_ROOT}/intel64/lib -lmpi -lmpifort -lmpicxx"
+
+with_linalg_flavor="mkl"
+with_linalg_incs="-I${MKLROOT}/include/intel64"
+with_linalg_libs="-L${MKLROOT}/lib/intel64 -lmkl_scalapack_lp64 -lmkl_intel_lp64 -lmkl_intel_thread -lmkl_core -lmkl_blacs_intelmpi_lp64 -liomp5 -lpthread -lm -ldl"
+
+with_fft_flavor="dfti"
+with_fft_incs="-I${MKLROOT}/include"
+with_fft_libs="-L${MKLROOT}/lib -lmkl_scalapack_lp64 -lmkl_intel_lp64 -lmkl_intel_thread -lmkl_core -lmkl_blacs_intelmpi_lp64 -liomp5 -lpthread -lm -ldl"
+
+# abinit requires a patched version of wannier90 so we will just use the fallback
+# abinit also is picky about its libxc version so also using fallback
+with_dft_flavor="wannier90+libxc"
+
+with_trio_flavor="netcdf"
+enable_netcdf_default="yes"
+with_netcdf_incs="-I${NETCDF_BASE}/include"
+with_netcdf_libs="-L${NETCDF_BASE}/lib -lnetcdff -lnetcdf"
+
+# for use on rusty uncomment next line
+# prefix="/mnt/home/__user__/sw/abinit/8.10.3-intelmpi2017-4"
+# for use on popeye uncomment next line
+# prefix="/home/__user__/sw/abinit/8.10.3-intelmpi2017-4"

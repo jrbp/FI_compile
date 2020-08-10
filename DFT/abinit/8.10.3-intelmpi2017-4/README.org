@@ -11,5 +11,30 @@ We will use the preinstalled modules:
     - lib/hdf5/1.12.0-intelmpi
 ** to be installed manually
 *** [[file:../../../libs/netcdf/4.7.4-intelmpi2017-4/README.org][netcdf/4.7.4-intelmpi2017-4]]
-If netcdf with MPI-IO is not needed this can be skipped and either the fallback or preinstalled modules can be used.
-However, this guide is written as if parallel netcdf has been installed and a personal module configured as detailed in the link above.
+If netcdf with MPI-IO is not needed this can be skipped and either the fallback
+or preinstalled modules can be used. However, this guide is written as if
+parallel netcdf has been installed and a personal module configured as detailed
+in the link above.
+* Setup
+
+cd to where ever you intend to build (/home/$USER/builds/netcdf would be good on the flatiron desktop for faster read/write)
+
+Download and extract source:
+#+BEGIN_SRC sh
+wget https://www.abinit.org/sites/default/files/packages/abinit-8.10.3.tar.gz
+tar -xvf abinit-8.10.3.tar.gz
+cd abinit-8.10.3.tar.gz
+#+END_SRC
+
+Load relevant modules:
+#+BEGIN_SRC sh
+module purge
+module load intel/compiler/2017-4 intel/mpi/2017-4 intel/mkl/2017-4 lib/hdf5/1.12.0-intelmpi my_mods/netcdf/4.7.4-intelmpi2017-4
+#+END_SRC
+* Compile
+
+
+
+Copy [the configure.ac file in this directory] to
+
+* Configure

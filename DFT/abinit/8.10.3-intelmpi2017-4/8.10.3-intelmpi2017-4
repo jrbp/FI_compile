@@ -1,0 +1,31 @@
+#%Module1.0#####################################################################
+#
+# Module: abinit-8.10.3-intelmpi2014-4
+#
+
+set pkg abinit
+set version 8.10.3-intelmpi2014-4
+# for rusty
+# set root /mnt/home/__user__/sw/abinit/8.10.3-intelmpi2017-4
+# for popeye
+# set root /mnt/home/__user__/sw/abinit/8.10.3-intelmpi2017-4
+
+proc ModulesHelp { } {
+    puts stderr "Sets the environment for $pkg-$version"
+}
+
+module-whatis   "Sets the environment for $pkg-$version"
+
+prepend-path    PATH                            $root/bin
+prepend-path    LD_LIBRARY_PATH                 $root/lib
+prepend-path    MANPATH                         $root/share/man
+
+setenv          ABINIT_BASE                       $root
+setenv          ABINIT_VERSION                    $version
+
+prereq          intel/compiler/2017-4
+prereq          intel/mpi/2017-4
+prereq          intel/mkl/2017-4
+prereq          lib/hdf5/1.12.0-intelmpi
+prereq          my_mods/netcdf/4.7.4-intelmpi2017-4
+conflict        my_mods/abinit

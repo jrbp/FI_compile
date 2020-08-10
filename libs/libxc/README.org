@@ -1,0 +1,4 @@
+#+TITLE: libxc
+https://www.tddft.org/programs/libxc/
+* Versions
+- [[file:4.3.4-intelmpi2020/README.org][4.3.4 intelmpi2020]]

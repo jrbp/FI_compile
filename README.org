@@ -13,3 +13,4 @@ copy pasted commands that is better than no documentation at all.
 - [[file:DFT/octopus/README.org][Octopus]]
 * Libraries
 - [[file:libs/netcdf/README.org][NetCDF]]
+- [[file:libs/libxc/README.org][libXC]]

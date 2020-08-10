@@ -7,7 +7,6 @@ In this guide both C and Fortran bindings will be installed.
 We will use the preinstalled modules:
     - intel/compiler/2017-4
     - intel/mpi/2017-4
-    - intel/mkl/2017-4
     - lib/hdf5/1.12.0-intelmpi
 
 * Setup
@@ -43,13 +42,28 @@ make check # to ensure nothing went wrong
 make install
 cd ../
 #+END_SRC
+
 ** netcdf-fortran
 It is recommended to complete the steps in [[*Setup module files][Setup module files]] below before
 proceeding (other wise you will need to set some of the env vars used here
 manually).
 
+Now that you have the module file setup we load it
+#+BEGIN_SRC sh
+module load my_mods/netcdf/4.7.4-intelmpi2017-4
+#+END_SRC
 
+#+BEGIN_SRC sh
+cd netcdf-fortran-4.5.3
 
+./configure FC=mpiifort CC=mpiicc CPPFLAGS="-I${NETCDF_BASE}/include -I${HDF5_BASE}/include" LDFLAGS="-L${NETCDF_BASE}/lib -L${HDF5_BASE}/lib" LIBS="-lhdf5_fortran -lhdf5hl_fortran -lhdf5_hl -lhdf5" --enable-parallel-tests --prefix=${HOME}/sw/netcdf/4.7.4-intelmpi2017-4
+
+make -j8 # change number to number of processes you wish to compile with
+make check # to ensure nothing went wrong
+make install
+#+END_SRC
+
+There is no need to further configure module files if you already did so.
 
 * Configure
 ** Setup module files
@@ -57,10 +71,8 @@ If you have not done so already create the directory ~/sw/modules/my_mods where
 configurations of modules you yourself define are stored (you can of course
 change my_mods to your initials or something else).
 
-Copy [[file:4.7.4-intelmpi2017-4][the module file in this directory]] to =~/sw/modules/my_mods=.
+Copy [[file:4.7.4-intelmpi2017-4][the module file in this directory]] to =~/sw/modules/my_mods=, then within that file:
 
-Replace all instances of =_user__= with your username
-
-Uncomment the "set root" appropriately depending on if you are on rusty or popeye
-
-Change "my_mods" in the last line if you have named that directory something else
+- Replace all instances of =_user__= with your username
+- Uncomment the appropriate ~set root~ line depending on if you are on rusty or popeye
+- Change "my_mods" in the last line if you have named that directory something else

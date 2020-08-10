@@ -1,0 +1,8 @@
+#+TITLE: FI_compile
+
+Guides for compiling common codes used on rusty and/or popeye
+
+* DFT codes
+- [[file:DFT/abinit/README.org][ABINIT]]
+* Libraries
+- [[file:libs/netcdf/README.org][NetCDF]]

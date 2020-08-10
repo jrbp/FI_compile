@@ -30,8 +30,6 @@ module load intel/compiler/2017-4 intel/mpi/2017-4 intel/mkl/2017-4 lib/hdf5/1.1
 * Compile
 ** netcdf-c (must be done first)
 
-note the prefix line, use the appropriate prefix for either popeye and rusty
-
 #+BEGIN_SRC sh
 cd netcdf-c-4.7.4
 
@@ -74,6 +72,6 @@ change my_mods to your initials or something else).
 
 Copy [[file:4.7.4-intelmpi2017-4][the module file in this directory]] to =~/sw/modules/my_mods=, then within that file:
 
-- Replace all instances of =_user__= with your username
+- Replace all instances of =__user__= with your username
 - Uncomment the appropriate ~set root~ line depending on if you are on rusty or popeye
 - Change "my_mods" in the last line if you have named that directory something else

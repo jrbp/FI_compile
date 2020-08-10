@@ -34,7 +34,30 @@ module load intel/compiler/2017-4 intel/mpi/2017-4 intel/mkl/2017-4 lib/hdf5/1.1
 * Compile
 
 Copy [[file:./FI_intel2017.ac][the configure.ac file in this directory]] to the directory where you have
-extracted the abinit source code.
+extracted the abinit source code, then within that file:
 
 
+- Replace all instances of =__user__= with your username
+- Uncomment the appropriate ~prefix~ line at the bottom of the file depending on
+  if you are on rusty or popeye
+- Optionally uncomment the ~FCFLAGS_EXTRA=... CFLAGS_EXTRA=~ lines if you do not
+  wish to add ~ulimit -s unlimited~ to your job scripts (though jobs will run
+  faster if those lines are left commented and the ulimit command is used).
+
+#+BEGIN_SRC
+./configure --with-config-file=FI_intel2017.ac
+make -j8
+make check
+make install
+#+END_SRC
 * Configure
+
+If you have not done so already create the directory ~/sw/modules/my_mods where
+configurations of modules you yourself define are stored (you can of course
+change my_mods to your initials or something else).
+
+Copy [file:][the module file in this directory]] to =~/sw/modules/my_mods=, then within that file:
+
+- Replace all instances of =__user__= with your username
+- Uncomment the appropriate ~set root~ line depending on if you are on rusty or popeye
+- Change "my_mods" in the last line if you have named that directory something else

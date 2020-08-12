@@ -1,6 +1,15 @@
 #+TITLE: ABINIT 8.10.3 intelmpi2017-4
 
-Guide for compiling abinit for use with rusty or popeye systems.
+
+To simply use a pre-compiled version you can load it and all prerequisites as a module with:
+
+on rusty:
+#+BEGIN_SRC sh
+module use --append /mnt/home/jbonini/sw/modules
+module load intel/compiler/2017-4 intel/mpi/2017-4 intel/mkl/2017-4 lib/hdf5/1.12.0-intelmpi jb/netcdf/4.7.4-intelmpi2017-4 jb/abinit/8.10.3-intelmpi2017-4
+#+END_SRC
+
+What follows is a guide for compiling abinit for use with rusty or popeye systems.
 
 * Dependencies
 ** preinstalled

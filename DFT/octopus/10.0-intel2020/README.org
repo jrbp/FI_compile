@@ -1,5 +1,16 @@
 #+TITLE: Octopus 10.0 intelmpi2020
 
+To simply use a pre-compiled version you can load it and all prerequisites as a module with:
+
+on rusty:
+#+BEGIN_SRC sh
+module use --append /mnt/home/jbonini/sw/modules
+
+module load intel/compiler/2020 intel/mpi/2020 intel/mkl/2020 lib/fftw3/3.3.8-intelmpi jb/libxc/4.3.4-intelmpi2020 lib/hdf5/1.12.0-intelmpi jb/netcdf/4.7.4-intelmpi2020 jb/octopus/10.0-intelmpi2020
+#+END_SRC
+
+What follows is a guide for compiling octopus for use with rusty or popeye systems.
+
 *Warning: under construction / not thoroughly tested yet*
 * Dependencies
 ** preinstalled

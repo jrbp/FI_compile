@@ -15,6 +15,7 @@ module-whatis   "Sets the environment for $pkg-$version"
 
 prepend-path    PATH                            $root/bin
 prepend-path    LD_LIBRARY_PATH                 $root/lib
+prepend-path    MANPATH                         $root/share/man
 
 setenv          OCTOPUS_BASE                       $root
 setenv          OCTOPUS_VERSION                    $version

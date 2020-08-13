@@ -41,6 +41,16 @@ likwid
 
 
 * Setup
+if installing from gitlab instead of using the releases on webpage
+we also need to generate the configure file:
+#+BEGIN_SRC sh
+# need to generate for spglib
+cd external_libs/spglib-1.9.9
+aclocal && autoheader && libtoolize && automake -acf && autoconf
+cd ../../
+# generate for octopus
+aclocal -I m4 && autoheader && libtoolize && automake -acf && autoconf
+#+END_SRC
 * Compile
 #+BEGIN_SRC sh
 module purge
@@ -52,11 +62,9 @@ export FCFLAGS="-Ofast -ipo -xHost"
 export CC=mpiicc
 export CXX=mpiicpc
 export FC=mpiifort
-./configure --prefix='/mnt/home/jbonini/sw/octopus/10-intelmpi2020' --with-libxc-prefix="$LIBXC_BASE" --with-netcdf-prefix="$NETCDF_BASE" --enable-mpi --with-blas=yes --with-lapack=yes --with-blacs=yes
---with-scalapack=yes
-#make clean
+./configure --prefix='/mnt/home/jbonini/sw/octopus/10-intelmpi2020' --with-libxc-prefix="$LIBXC_BASE" --with-netcdf-prefix="$NETCDF_BASE" --enable-mpi --with-blas=yes --with-lapack=yes --with-blacs=yes --with-scalapack=yes
 make -j6
-make check?
+make check
 make install
 #+END_SRC
 * Configure
